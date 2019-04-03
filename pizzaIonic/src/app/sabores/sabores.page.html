@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-toolbar>
+      <ion-title padding-bottom padding-top>
+        Selecione o tamanho da pizza:
+      </ion-title>
+      <ion-buttons>
+        <ion-segment-button *ngFor="let item of tamanhos" (click)="getSabor(item.id, item.quantidade_sabores)" >
+            {{item.name}} ({{item.quantidade_sabores}})
+        </ion-segment-button>
+      </ion-buttons>
+    </ion-toolbar>  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+      <ion-item *ngFor="let item of sabores">
+          <ion-checkbox color="secondary" style="margin-right: 1em;" [(ngModel)]="item.check" (click)="validaQtd(item)"></ion-checkbox>
+          <ion-label>
+            {{item.sabor}}
+          </ion-label>
+          R$ {{item.preco}},00
+        </ion-item>
+      </ion-list>
+</ion-content>
